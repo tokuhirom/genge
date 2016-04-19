@@ -1,0 +1,15 @@
+# genge
+
+Framework for LINE Trial BOT
+
+## DESCRIPTION
+
+Genge is an open source framework for LINE trial bot.
+
+## How do I use this?
+
+    ./gradlew bootRun -Dline.channelId=XXX -Dline.channelSecret=XXX -Dline.channelMid=XXX
+
+To enable echo bot plugin:
+
+    ./gradlew bootRun ... -Dgenge.echo.enabled=true

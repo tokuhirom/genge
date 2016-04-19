@@ -32,10 +32,15 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile "com.linecorp.bot:line-bot-spring-boot:0.0.1"
 	compile "org.mockito:mockito-all:2.0.2-beta"
+	compile "org.assertj:assertj-core:3.4.1"
 
 	testCompile('org.springframework.boot:spring-boot-starter-test') 
 }
 
 task wrapper(type: Wrapper) {
 	gradleVersion = '2.12'
+}
+
+bootRun {
+	systemProperties System.properties
 }

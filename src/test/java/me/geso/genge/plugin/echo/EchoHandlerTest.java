@@ -1,4 +1,4 @@
-package me.geso.genge.plugin.base64;
+package me.geso.genge.plugin.echo;
 
 import com.linecorp.bot.client.LineBotClient;
 import com.linecorp.bot.model.content.AbstractContent;
@@ -11,21 +11,22 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
-public class Base64EncodeHandlerTest {
+public class EchoHandlerTest {
     @Mock
     private LineBotClient lineBotClient;
     @InjectMocks
-    private Base64EncodeHandler underTest;
+    private EchoHandler underTest;
 
     @Test
     public void told() throws Exception {
         assertThat(underTest.told(new TextContent("1", "uXXX", AbstractContent.CONTENT_TYPE_TEXT, 1L, "hello")))
-            .isEqualTo(HandlerResponse.OK);
+                .isEqualTo(HandlerResponse.OK);
 
         verify(lineBotClient)
-                .sendText("uXXX", "aGVsbG8=");
+                .sendText("uXXX", "hello");
     }
 }

@@ -6,9 +6,11 @@ import com.linecorp.bot.model.content.TextContent;
 import me.geso.genge.handler.HandlerResponse;
 import me.geso.genge.handler.TextContentHandler;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 @Component
+@ConditionalOnProperty("genge.echo.enabled")
 public class EchoHandler implements TextContentHandler {
     @Autowired
     private LineBotClient lineBotClient;
